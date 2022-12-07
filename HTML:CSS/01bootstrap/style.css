@@ -1,0 +1,244 @@
+/* 변수 */
+:root {
+  --color-my: rgb(98, 27, 27);
+  --color-grey: #f7f9fc;
+  --color-blue: #6fbaf8;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+body {
+  background-color: var(--color-grey);
+}
+
+/* 스크린 공통 클래스 */
+
+.bg-grey {
+  background-color: var(--color-grey);
+}
+.bg-blue {
+  background-color: var(--color-blue);
+}
+
+.font-blue {
+  color: var(--color-blue);
+}
+
+.btn-blue {
+  background-color: var(--color-blue);
+  color: white;
+}
+
+.box {
+  /* background-color: #ffffff; */
+  padding: 3%;
+  border-radius: 5px;
+}
+
+.my-btn {
+  /* background-color: var(--color-my); */
+  padding: 5px 20px;
+  border: none;
+  /* font-weight: 500; */
+  border-radius: 4px;
+}
+.skill-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.chip {
+  font-size: small;
+  background-color: white;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  color: black;
+  justify-content: start;
+}
+
+.my-tab {
+  height: 50px;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.tab-line {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-blue);
+  z-index: 10;
+}
+.tab-line-all {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  background-color: rgb(238, 238, 238);
+}
+
+.user-list {
+  display: flex;
+  align-items: center;
+}
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.user-info-text {
+  display: flex;
+  /* justify-content: space-evenly; */
+}
+.user-info-text p:nth-child(1) {
+  width: 50%;
+  font-weight: 600;
+}
+/* 모바일 */
+@media screen and (max-width: 991px) {
+  .container {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  .top-container {
+    /* background-color: white; */
+    border-radius: 5px;
+  }
+
+  .top-box {
+    margin: 0;
+    padding: 20px;
+    width: 95%;
+  }
+
+  .profile-img-container {
+    width: 100px;
+  }
+  .profile-img-container img {
+    width: 100%;
+  }
+  .fire-icon {
+    width: 30%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .rcmd {
+    display: none;
+  }
+  .box {
+    margin: 10px auto;
+    padding: 20px;
+    width: 95%;
+  }
+  .find-more-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+  }
+  .find-more-container button {
+    /* width: 50%; */
+  }
+
+  .fire-icon i {
+    font-size: 90px;
+  }
+
+  .user-info-container {
+    height: 200px;
+    justify-content: space-around;
+  }
+}
+
+/* 데스크탑 */
+@media screen and (min-width: 992px) {
+  .container {
+    padding-top: 40px;
+    padding-bottom: 100px;
+  }
+
+  .top-container {
+    border-radius: 5px;
+    background-color: white;
+  }
+
+  .top-box:nth-child(2) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .bottom {
+    height: 560px;
+  }
+
+  /* 하단 양끝 박스 마진 */
+  .bottom > div:nth-child(1) {
+    margin-right: 10px;
+  }
+  .bottom > div:nth-child(2) {
+    flex-grow: 1;
+  }
+  .bottom > div:nth-child(3) {
+    margin-left: 10px;
+    position: relative;
+  }
+  .find-more-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+  }
+  .fire-icon {
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .rcmd {
+    /* display: flex; */
+    flex-direction: column;
+
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 40%;
+    right: 0;
+  }
+
+  .user-list {
+    position: relative;
+    margin-bottom: 5px;
+  }
+  .user-list > div:nth-child(1) {
+    width: 30%;
+  }
+  .user-list > div:nth-child(2) {
+    width: 65%;
+    margin-left: 5%;
+  }
+  .user-list img {
+    width: 100%;
+  }
+  .user-info-container {
+    position: relative;
+  }
+  .v-line {
+    border: 1px solid rgb(222, 222, 222);
+    height: 80%;
+    position: absolute;
+    left: 0%;
+  }
+}

@@ -1,0 +1,86 @@
+@use 'reset';
+
+$main-color: #963737;
+$color-red: #d20000;
+$default-size: 20px;
+.bg-main {
+  background-color: $main-color;
+}
+
+.box {
+  font-size: $default-size -2px;
+}
+
+.bg-main {
+  p {
+    font-size: $default-size;
+  }
+}
+
+%btn {
+  width: 120px;
+  height: 50px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 50px;
+}
+
+.btn-green {
+  @extend %btn;
+  background-color: green;
+  color: white;
+}
+.btn-red {
+  @extend %btn;
+  background-color: rgb(209, 33, 33);
+  color: white;
+}
+.btn-grey {
+  @extend %btn;
+  background-color: rgb(210, 210, 210);
+  color: rgb(0, 0, 0);
+}
+
+%box {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.box-red {
+  @extend %box;
+  background-color: $color-red;
+  color: white;
+}
+.box-blue {
+  @extend %box;
+  background-color: blue;
+  color: white;
+}
+
+.box-green {
+  @extend %box;
+  background-color: rgb(0, 182, 0);
+  color: white;
+}
+
+// SASS 3
+// mixin
+@mixin font-style($size, $color, $params3) {
+  font-size: $size;
+  letter-spacing: 20px;
+  color: $color;
+
+  #{$params3}: 20px;
+}
+
+h2 {
+  @include font-style(20px, red, letter-spacing);
+}
+
+// h3 {
+//   @include font-style(30px);
+// }
+// h4 {
+//   @include font-style(40px);
+// }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SNS Profile Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row p-3 top-container">
+        <!-- 상단 우측 : 프로필 요약 -->
+        <div class="bg-white top-box col col-lg-8 d-flex">
+          <div class="profile-img-container">
+            <img src="./imgs/profile-pic.png" alt="profile-pic" />
+          </div>
+          <div class="profile-info-main ms-2">
+            <p class="fs-4 mb-0">Killian Sven</p>
+            <div></div>
+            <span>Front-end Developer</span>
+            <div class="mb-2">
+              📌
+              <span class="font-blue">서울 마포구</span>
+            </div>
+            <button class="my-btn btn-blue">Contact</button>
+          </div>
+        </div>
+
+        <!-- 상단 좌측 : 프로필 상세 -->
+        <div class="bg-white top-box col col-lg-4 d-flex user-info-container">
+          <div class="v-line"></div>
+          <div class="user-info-text">
+            <p>Location</p>
+            <p>서울 마포구</p>
+          </div>
+          <div class="user-info-text">
+            <p>Age</p>
+            <p>90년생</p>
+          </div>
+          <div class="user-info-text">
+            <p>Experience</p>
+            <p>신입</p>
+          </div>
+          <div class="user-info-text">
+            <p>School</p>
+            <p>천조국 토목공학과</p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="position-relative bg-danger">
+        <div class="tab-item bg-primary h-100">tab</div>
+        <hr style="border: 5px solid grey" />
+      </div> -->
+
+      <div class="row my-tab">
+        <div class="col-3 col-lg-1 position-relative">
+          <p class="m-auto text-center font-blue">Profile</p>
+          <div class="tab-line"></div>
+        </div>
+        <div class="tab-line-all"></div>
+      </div>
+      <!-- 하단 박스 시작 -->
+      <div class="row bottom row-cols-1 row-cols-lg-3">
+        <div class="bg-white box col-12 col-lg-3">
+          <p class="fs-4 mb-3">WORK</p>
+          <p>Lorem ipsum dolor sit amet consectetolor id nulla dolore nemo illum, nesciunt cumque vero.</p>
+        </div>
+
+        <!-- 하단 중앙 박스 -->
+        <div class="bg-white box col">
+          <div class="about skill mb-5">
+            <p class="fs-4 mb-3">ABOUT</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore amet rem cumque, laboriosam neque, hic praesentium commodi non sequi quos magnam, nihil provident atque aperiam nobis eaque! Architecto,
+              asperiores atque.
+            </p>
+          </div>
+          <hr />
+          <div class="">
+            <p class="fs-4 mb-3">SKILL</p>
+            <div class="skill-container">
+              <span class="chip">HTML5</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">CSS3</span>
+              <span class="chip">Illustrator</span>
+              <span class="chip">Photoshop</span>
+            </div>
+          </div>
+        </div>
+        <!-- 하단 세번째 영역 -->
+        <div class="col-12 col-lg-3 box bg-white h-100">
+          <div class="bg-white h-50 find-more-container">
+            <!-- <div class="p-0"> -->
+            <div class="fire-icon">
+              <i class="fas fa-fire-alt fa-6x font-blue"></i>
+            </div>
+            <p class="mb-3">Find me at Linkedout.com</p>
+            <button class="my-btn btn-blue">Sign Up</button>
+            <p class="font-blue">
+              <small> Already a member? </small>
+            </p>
+            <!-- </div> -->
+          </div>
+
+          <!-- 하단 우측 - 추천 친구 -->
+
+          <div class="bg-grey rcmd p-3">
+            <p class="ms-2">People You may know</p>
+            <hr />
+            <div class="user-list">
+              <div class="bg-grey">
+                <img src="./imgs/profile-pic.png" class="h-100" alt="profile-pic" />
+              </div>
+              <div>
+                <p class="fw-semibold">Jason Derulo</p>
+                <p>Developer</p>
+                <i class="fas fa-map-marker-alt font-blue"></i>
+                <span class="font-blue">Seoul</span>
+                <!-- </div> -->
+              </div>
+            </div>
+
+            <div class="user-list">
+              <div class="bg-grey">
+                <img src="./imgs/profile-pic.png" class="h-100" alt="profile-pic" />
+              </div>
+              <div>
+                <p class="fw-semibold">Logan Daul</p>
+                <p>Developer</p>
+                <div>
+                  <i class="fas fa-map-marker-alt font-blue"></i>
+                  <span class="font-blue">Busan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>

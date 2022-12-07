@@ -1,0 +1,64 @@
+/* .pseudo::first-letter {
+  font-size: larger;
+  color: red;
+} */
+.pseudo {
+  width: 30%;
+}
+.pseudo::after {
+  content: 'hi';
+}
+
+.pseudo::first-line {
+  font-size: larger;
+  color: red;
+}
+
+.product-container div {
+  float: right;
+  /* width: 50%; */
+}
+
+.product-container::after {
+  content: '';
+  display: block;
+}
+
+.input-file::file-selector-button {
+  border: none;
+  background-color: skyblue;
+}
+.input-file::file-selector-button:hover {
+  /* border: none; */
+  background-color: blue;
+}
+
+/* shadow-dom */
+
+progress {
+  /*기본 배경은 없애주는게 좋습니다*/
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: linear-gradient(yellow, red);
+  /* background: rgb(232, 232, 232); */
+  /* IE10 호환성용 */
+  border-radius: 10px;
+  color: red;
+}
+
+progress::-webkit-progress-bar {
+  background: linear-gradient(to right, yellow, orange);
+  border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+  background: linear-gradient(red, purple);
+  border-radius: 10px;
+}
+
+/*파이어폭스 호환성을 위해*/
+progress::-moz-progress-bar {
+  background-color: red;
+  border-radius: 10px;
+}

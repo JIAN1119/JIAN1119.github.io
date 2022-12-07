@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.bg-main {
+  background-color: #963737;
+}
+
+.box {
+  font-size: 20px -2px;
+}
+
+.bg-main p {
+  font-size: 20px;
+}
+
+.btn-grey, .btn-red, .btn-green {
+  width: 120px;
+  height: 50px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 50px;
+}
+
+.btn-green {
+  background-color: green;
+  color: white;
+}
+
+.btn-red {
+  background-color: rgb(209, 33, 33);
+  color: white;
+}
+
+.btn-grey {
+  background-color: rgb(210, 210, 210);
+  color: rgb(0, 0, 0);
+}
+
+.box-green, .box-blue, .box-red {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.box-red {
+  background-color: #d20000;
+  color: white;
+}
+
+.box-blue {
+  background-color: blue;
+  color: white;
+}
+
+.box-green {
+  background-color: rgb(0, 182, 0);
+  color: white;
+}
+
+h2 {
+  font-size: 20px;
+  letter-spacing: 20px;
+  color: red;
+  letter-spacing: 20px;
+}/*# sourceMappingURL=sass.css.map */

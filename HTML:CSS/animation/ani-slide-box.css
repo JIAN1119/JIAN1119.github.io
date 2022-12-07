@@ -1,0 +1,16 @@
+.ani-navbar {
+  width: 200px;
+  background: black;
+  color: white;
+  height: 100%;
+  padding: 25px;
+  position: fixed;
+  z-index: 5;
+  text-align: right;
+  transition: all 1s;
+  transform: translateX(-150px);
+}
+.ani-navbar:hover {
+  transform: translateX(0px);
+  text-align: center;
+}

@@ -1,0 +1,136 @@
+@use 'reset';
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+ul {
+  display: inline-block;
+  width: 300px;
+  list-style: none;
+  padding: 0;
+  background-color: red;
+  border-radius: 5px;
+  border: 1px solid rgb(147, 147, 147);
+  // padding: 10px;
+}
+
+li {
+  // padding: 5px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(147, 147, 147);
+  // padding: 5px 20px;
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  font-weight: 500;
+  flex-direction: column;
+  justify-content: center;
+
+  &:first-child {
+    // border-top-right-radius: 80px 80px;
+    border-radius: 5px 5px 0 0;
+  }
+  &:last-child {
+    border-radius: 0 0 5px 5px;
+    border-bottom: none;
+  }
+}
+
+.active {
+  background-color: rgb(83, 152, 255);
+  color: white;
+}
+
+// @mixin alert($color, $bg) {
+//   border-radius: 10px;
+//   padding: 10px;
+//   background-color: $bg;
+//   color: $color;
+//   width: 600px;
+//   margin-bottom: 10px;
+// }
+
+// .alert-red {
+//   @include alert(rgb(196, 0, 0), rgba(255, 0, 0, 0.2));
+// }
+// .alert-blue {
+//   @include alert(rgb(0, 56, 196), rgba(35, 83, 255, 0.2));
+// }
+// .alert-green {
+//   @include alert(rgb(0, 158, 92), rgba(35, 255, 233, 0.2));
+// }
+
+@mixin alert() {
+  border-radius: 10px;
+  padding: 10px;
+  width: 600px;
+  margin-bottom: 10px;
+}
+
+.alert-red {
+  @include alert();
+  background-color: rgba(226, 33, 33, 0.26);
+  color: red;
+}
+.alert-yellow {
+  @include alert();
+  background-color: rgba(255, 196, 2, 0.26);
+  color: rgba(255, 196, 2);
+}
+
+@mixin col-default($div-ea) {
+  width: cal(100% / $div-ea);
+  background-color: rgb(120, 120, 120);
+  padding: calc(8% / $div-ea);
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  // 공통 사이즈
+  .col {
+    @include col-default(1);
+  }
+  .col-2 {
+    @include col-default(2);
+  }
+  .col-6 {
+    @include col-default(6);
+  }
+  .col-4 {
+    @include col-default(4);
+  }
+
+  // md사이즈
+  @media screen and (min-width: 768px) {
+    .col-md-2 {
+      @include col-default(2);
+    }
+    .col-md-6 {
+      @include col-default(6);
+    }
+    .col-md-4 {
+      @include col-default(4);
+    }
+  }
+
+  // lg 사이즈 이상
+  @media screen and (min-width: 992px) {
+    .col-xl {
+      @include col-default(1);
+    }
+    .col-xl-2 {
+      @include col-default(2);
+    }
+    .col-xl-6 {
+      @include col-default(6);
+    }
+    .col-xl-4 {
+      @include col-default(4);
+    }
+  }
+}

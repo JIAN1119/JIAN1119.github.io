@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrap {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  height: 1000px;
+  background-color: grey;
+  border: 1px solid grey;
+}
+
+.grid-container {
+  display: grid;
+  width: 600px;
+  height: 600px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    'main main .'
+    'main main .'
+    '. . .';
+}
+.grid-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid-container div {
+  /* border: 1px solid grey; */
+  /* background-color: lightgrey; */
+  overflow: hidden;
+}
+.grid-item-main {
+  position: relative;
+  grid-area: main;
+  border: 1px solid grey;
+  /* background-color: red; */
+  background-image: url('imgs/pic2.jpeg');
+  background-size: cover;
+  background-position: center;
+  transition: 0.4s all ease;
+}
+.grid-item-main:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imgs/pic2.jpeg');
+
+  /* background-color: black; */
+}
+.grid-item-main:hover::after {
+  position: absolute;
+  font-size: 24px;
+  top: 50%;
+  left: 50%;
+  content: '루이와 하루';
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  /* background-color: black; */
+}
+
+.grid-item {
+  position: relative;
+}
+.grid-item img {
+  z-index: 0;
+  transition: 0.4s all ease;
+}
+.grid-item p {
+  display: none;
+  z-index: 10;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  transition: 0.4s all ease;
+}
+
+.grid-item:hover img {
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
+  /* display: block; */
+  filter: brightness(50%);
+}
+.grid-item:hover p {
+  display: block;
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  background-color: white;
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.header img {
+  /* margin: 10px; */
+  height: 100%;
+  object-fit: contain;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  padding: 10px 15px;
+}
+
+.img-container {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.bottom {
+  width: 100%;
+  /* height: 100%; */
+  background: white;
+  flex-grow: 1;
+}
