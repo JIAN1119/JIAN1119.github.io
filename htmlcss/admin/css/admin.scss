@@ -1,6 +1,7 @@
 @use '_reset';
 
 $color-main: #db0071;
+$color-main-pale: #db00714d;
 $color-main-pale: rgba(219, 0, 113, 0.3);
 $color-main-grd: linear-gradient(rgb(255, 148, 166), $color-main);
 $color-dark: #383838;
@@ -522,6 +523,7 @@ aside:hover {
     }
   }
   .container {
+    overflow-y: hidden;
     height: 100vh;
   }
 

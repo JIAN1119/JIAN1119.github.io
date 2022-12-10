@@ -549,6 +549,7 @@ aside:hover .icon-text {
     display: none;
   }
   .container {
+    overflow-y: hidden;
     height: 100vh;
   }
   .content {
