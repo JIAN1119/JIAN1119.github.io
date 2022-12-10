@@ -13,10 +13,34 @@ a {
   color: black !important;
 }
 
+body {
+  // background-color: black;
+}
+
+.container-fluid {
+  padding-top: 50px;
+  padding: 50px;
+  // background-color: rgb(229, 229, 229);
+  min-height: 100vh;
+}
+
 ul {
+  text-align: center;
+  // border: 1px solid rgb(195, 195, 195);
+  max-width: 600px;
   li {
+    left: 0;
+
+    right: 0;
+    margin: auto;
+    // width: 90%;
     padding: 10px;
+    background-color: white;
     border-bottom: 1px solid grey;
+
+    &:last-child {
+      border: none;
+    }
   }
 }
 
