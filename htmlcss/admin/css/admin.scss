@@ -1,0 +1,620 @@
+@use '_reset';
+
+$color-main: #db0071;
+$color-main-pale: rgba(219, 0, 113, 0.3);
+$color-main-grd: linear-gradient(rgb(255, 148, 166), $color-main);
+$color-dark: #383838;
+$color-muted: #a0a0a0;
+$color-grey: #eeeeee;
+$color-layout: #00000018;
+$color-shadow: #00000010;
+$color-border: #00000012;
+
+$size-default: 8px;
+$rad: 8px;
+$rad-sm: 4px;
+$default-weight: 400;
+
+// [공통] 태그
+
+p,
+span,
+div {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  border-bottom: 1px solid $color-border;
+}
+
+.nav-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $color-border;
+  border-radius: $rad;
+  color: $color-muted;
+  font-size: 36px;
+  box-shadow: 0 1px 4px 2px $color-shadow;
+
+  i {
+    text-align: center;
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+}
+
+// 메뉴아이콘 토글 시 보이는 ㅂ분
+.navbar {
+  display: flex;
+  // background-color: grey;
+  width: 100%;
+
+  .search {
+    display: flex;
+    padding: 10px;
+    width: 30%;
+
+    input::-webkit-input-placeholder {
+      color: rgba(0, 0, 0, 0.3);
+    }
+
+    #input-search {
+      width: 200px;
+      border-radius: $rad-sm 0 0 $rad-sm;
+      transition: all 1s ease;
+      padding: $size-default;
+      font-size: $size-default * 2.5;
+      transition: 0.4s all ease;
+      border-color: $color-main;
+
+      &:focus {
+        border-width: 2px;
+        width: 400px;
+
+        &::-webkit-input-placeholder {
+          color: $color-main-pale;
+          font-weight: 600;
+        }
+      }
+    }
+
+    button {
+      border: 1px solid $color-main;
+      padding: $size-default;
+      aspect-ratio: 1/1;
+      background: $color-main-grd;
+      color: white;
+      font-size: $size-default * 3;
+      border-radius: 0 $rad-sm $rad-sm 0;
+    }
+  }
+
+  .user-stat {
+    min-width: 250px;
+    margin-right: $size-default * 3;
+    // padding: $size-default * 3;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    .icon-box,
+    p {
+      white-space: nowrap;
+      margin-left: $size-default * 2;
+    }
+
+    .icon-box {
+      position: relative;
+      // width: 90%;
+      height: 90%;
+      aspect-ratio: 1/1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 34px;
+    }
+
+    .badge-new {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-radius: 30%;
+      background-color: $color-main;
+      border: 1px solid white;
+      // aspect-ratio: 1/1;
+
+      .badge-text {
+        aspect-ratio: 1/1;
+
+        font-size: 8px;
+        line-height: 8px;
+        color: white;
+        // margin: 5px;
+      }
+    }
+  }
+}
+
+aside {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 10;
+  background-color: $color-main;
+  transform: translateX(-70%);
+  transition: 0.6s all ease;
+
+  .menu-item {
+    font-size: $size-default * 4;
+    margin: $size-default * 3 auto;
+    width: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 5%;
+    color: white;
+    // border: 1px solid black;
+  }
+
+  i {
+    position: absolute;
+    right: 0px;
+    transition: 0.6s all ease;
+  }
+  .icon-text {
+    position: absolute;
+    left: 0px;
+    transition: 0.6s all ease;
+
+    // transform: translateX(-200px);
+  }
+}
+
+aside:hover {
+  transform: translateX(0);
+
+  .menu-item {
+    // flex-direction: row-reverse;
+  }
+  i {
+    right: auto;
+    left: 0;
+  }
+  .icon-text {
+    left: auto;
+    right: 0px;
+    // transform: translateX(100px);
+  }
+}
+
+.badge-inner {
+  // 숫자 속성
+  margin: 5px 8px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 16px;
+  color: white;
+}
+
+// [공통] 클래스
+
+@mixin column($ea) {
+  width: 100% / $ea;
+}
+
+.fs-2 {
+  font-size: $size-default * 3;
+}
+.fs-4 {
+  font-size: $size-default * 2.5;
+}
+
+.fw-bold {
+  font-weight: $default-weight + 200;
+}
+
+.color-muted {
+  color: $color-muted;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.outline {
+  box-shadow: 0 1px 4px 2px $color-shadow;
+
+  border: 1px solid $color-border;
+  border-radius: $rad;
+}
+
+// 공통 : 컴포넌트 클래스
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  overflow-x: hidden;
+  // flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  // height: 90%;
+  padding: 10px;
+}
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.wrap {
+  margin-left: 75px;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  // height: 100vh;
+  background-color: rgb(248, 248, 248);
+}
+
+.title-box {
+  background: $color-main-grd;
+  color: white;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $color-border;
+
+  p {
+    margin-left: 10px;
+  }
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 15%;
+}
+
+.sum-card {
+  // width: 100%;
+  background-color: white;
+  box-shadow: 0 1px 4px 2px $color-shadow;
+  display: flex;
+  border: 1px solid $color-border;
+  border-radius: $rad;
+
+  .icon-box {
+    margin-left: auto;
+  }
+
+  .line {
+    width: 2%;
+    height: 100%;
+    border-radius: $rad 0 0 $rad;
+
+    // background-color: green;
+  }
+
+  .sum-content {
+    flex-grow: 1;
+    padding: $size-default * 2;
+    display: flex;
+    align-items: center;
+  }
+
+  .icon-box {
+    color: $color-dark;
+    font-size: 48px;
+  }
+}
+
+.earnings {
+  border: 1px solid $color-border;
+  background-color: white;
+  width: 100%;
+  margin-right: 20px;
+  height: 100%;
+  box-shadow: 0 1px 4px 2px $color-shadow;
+}
+
+.tasks {
+  border-radius: 0 0 $rad $rad;
+
+  li {
+    color: $color-dark;
+    border-bottom: 1px solid $color-border;
+
+    &:last-child {
+      border-radius: 0 0 $rad $rad;
+      border-bottom: none;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: $size-default * 3;
+      margin-left: auto;
+      background-color: $color-main;
+      font-weight: $default-weight + 200;
+      color: white;
+    }
+  }
+}
+
+// 모바일
+@media screen and (max-width: 768px) {
+  .fs-lg {
+    font-size: $size-default * 2;
+  }
+  .title-box {
+    p {
+      margin: $size-default * 2;
+    }
+  }
+
+  .row {
+    flex-direction: column;
+    justify-content: space-evenly;
+    .col-md-3 {
+      @include column(1);
+    }
+    .col-md-4 {
+      @include column(1);
+    }
+    .col-md-9 {
+      @include column(1);
+    }
+  }
+
+  // 사이드메뉴
+  aside {
+    box-shadow: 0 0px 24px 8px $color-shadow;
+    width: 220px;
+
+    .menu-item {
+      font-size: $size-default * 3;
+
+      // margin-left: 2px;
+      // margin-right: 2px;
+    }
+  }
+
+  .icon-box {
+    font-size: 26px;
+  }
+  .wrap {
+    width: 80%;
+    margin-left: 66px;
+    position: relative;
+    // width: auto;
+  }
+
+  .content {
+    padding: $size-default * 3 $size-default;
+  }
+
+  nav {
+    flex-direction: row;
+    height: 60px;
+    position: relative;
+
+    .nav-toggle:active .navbar {
+      transform: translateY(200px);
+    }
+  }
+
+  .nav-toggle {
+    align-self: center;
+    aspect-ratio: 1/1;
+    height: 70%;
+    margin-left: auto;
+    margin-right: $size-default * 2;
+    position: absolute;
+    right: 0;
+    font-size: $size-default * 3;
+  }
+
+  .navbar {
+    transform: translateY(-200px);
+    left: 0;
+    position: absolute;
+  }
+
+  .summary {
+    justify-content: space-evenly;
+    width: 100%;
+    height: 350px;
+    margin-bottom: $size-default * 2;
+
+    .sum-card {
+      width: 100%;
+      height: 20%;
+
+      .sum-content {
+        padding: $size-default * 2.5;
+      }
+
+      .icon-box {
+        font-size: $size-default * 4;
+      }
+    }
+  }
+
+  .earnings {
+    background-color: white;
+    // height: 300px;
+    margin-bottom: $size-default * 2;
+
+    .graph {
+      padding: $size-default * 2;
+    }
+  }
+
+  .tasks {
+    background-color: white;
+
+    .tasks-item {
+      padding: $size-default * 2;
+      display: flex;
+    }
+  }
+}
+
+// 데스크탑
+@media screen and (min-width: 769px) {
+  .fs-lg {
+    font-size: $size-default * 3;
+  }
+
+  .wrap {
+    width: 100%;
+    // height: 100vh;
+  }
+
+  .row {
+    display: flex;
+    width: 100%;
+  }
+
+  .col-md-3 {
+    @include column(4);
+  }
+
+  .col-md-4 {
+    @include column(3);
+  }
+  .col-md-9 {
+    @include column(4/3);
+  }
+
+  nav {
+    height: 80px;
+
+    .navbar {
+      padding-left: $size-default;
+      padding-right: $size-default;
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+  }
+  .container {
+    height: 100vh;
+  }
+
+  .content {
+    flex-grow: 1;
+  }
+
+  .icon-box {
+    font-size: 26px;
+  }
+
+  .title-box {
+    border-radius: $rad $rad 0 0;
+    width: 100%;
+    height: 60px;
+    font-size: $size-default * 3;
+
+    p {
+      margin: auto $size-default * 3;
+    }
+  }
+
+  .top {
+    height: 30%;
+
+    .summary {
+      width: 100%;
+      height: 65%;
+      margin: $size-default * 2 auto;
+    }
+
+    p {
+      // margin-bottom: 10px;
+    }
+  }
+  .sum-card {
+    height: 100%;
+    width: 23%;
+
+    .sum-content {
+      padding: $size-default * 3;
+    }
+
+    .text-title {
+      font-size: $size-default * 3;
+    }
+
+    .fw-bold {
+      font-size: $size-default * 3.5;
+    }
+  }
+
+  // .text-box {
+  //   margin: 30px 20px;
+  // }
+
+  .bottom {
+    flex-grow: 1;
+  }
+
+  .earnings {
+    border-radius: $rad;
+
+    .graph {
+      padding: 5%;
+    }
+  }
+
+  .tasks {
+    display: flex;
+    flex-direction: column;
+
+    .tasks-item {
+      padding: $size-default * 2 $size-default * 3;
+      display: flex;
+      background-color: white;
+
+      p {
+        font-size: $size-default * 3;
+        // margin: $size-default;
+      }
+    }
+
+    .badge {
+      margin-left: auto;
+      height: 24px;
+      line-height: 24px;
+    }
+
+    .empty {
+      // background-color: black;
+      flex-grow: 1;
+      color: #8119c2;
+    }
+  }
+}

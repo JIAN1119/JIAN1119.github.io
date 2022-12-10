@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>관리자 페이지</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- 좌측 사이드바 -->
+      <aside>
+        <div class="menu-item">
+          <span class="icon-text">Home</span>
+          <i class="fas fa-home"></i>
+        </div>
+        <div class="menu-item">
+          <span class="icon-text">Services</span>
+          <i class="fas fa-headphones"></i>
+        </div>
+        <div class="menu-item">
+          <span class="icon-text">Alerts</span>
+          <i class="fas fa-flag"></i>
+        </div>
+        <div class="menu-item">
+          <span class="icon-text">Stats</span>
+          <i class="fas fa-chart-pie"></i>
+        </div>
+      </aside>
+
+      <!-- 상단 네브바 영역 -->
+      <div class="wrap">
+        <!-- 상단 현황 카드 -->
+        <nav class="row">
+          <div class="navbar">
+            <div class="search">
+              <input id="input-search" type="text" placeholder="Enter the Search Keyword" />
+              <button>
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+            <div class="user-stat">
+              <div class="icon-box">
+                <i class="fas fa-envelope"></i>
+                <div class="badge-new">
+                  <span class="badge-inner"> 2 </span>
+                </div>
+              </div>
+              <div class="icon-box">
+                <i class="fas fa-bell"></i>
+                <div class="badge-new">
+                  <span class="badge-inner"> 2 </span>
+                </div>
+              </div>
+              <p class="color-muted text-title">JIAN SIM</p>
+            </div>
+          </div>
+          <div class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+
+        <!-- 네브바 아래 영역 -->
+        <div class="content">
+          <div class="top">
+            <p class="fs-lg fw-bold">Dashboard</p>
+            <section class="summary row">
+              <article class="sum-card col-md-3">
+                <div class="line" style="background-color: rgb(118, 199, 252)"></div>
+                <div class="sum-content">
+                  <div class="text-box">
+                    <p class="color-muted text-title mb-3">Earnings (Monthly)</p>
+                    <p class="fw-bold">$ 315,200</p>
+                  </div>
+
+                  <div class="icon-box">
+                    <i class="fas fa-calendar"></i>
+                  </div>
+                </div>
+              </article>
+              <article class="sum-card col-md-3">
+                <div class="line" style="background-color: rgb(146, 226, 232)"></div>
+                <div class="sum-content">
+                  <div class="text-box">
+                    <p class="color-muted text-title mb-3">Earnings (Annual)</p>
+                    <p class="fw-bold">$ 850,000</p>
+                  </div>
+                  <div class="icon-box">
+                    <i class="fas fa-won-sign"></i>
+                  </div>
+                </div>
+              </article>
+              <article class="sum-card col-md-3">
+                <div class="line" style="background-color: rgb(193, 117, 240)"></div>
+                <div class="sum-content">
+                  <div class="text-box">
+                    <p class="color-muted text-title mb-3">Tasks</p>
+                    <p class="fw-bold">13</p>
+                  </div>
+                  <div class="icon-box">
+                    <i class="fas fa-history"></i>
+                  </div>
+                </div>
+              </article>
+              <article class="sum-card col-md-3">
+                <div class="line" style="background-color: rgb(255, 232, 27)"></div>
+                <div class="sum-content">
+                  <div class="text-box">
+                    <p class="color-muted text-title mb-3">Requests</p>
+                    <p class="fw-bold">26</p>
+                  </div>
+                  <div class="icon-box">
+                    <i class="fas fa-comments"></i>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </div>
+
+          <!-- 2. 하단 영역 -->
+
+          <!-- 2.1. 그래프 -->
+          <section class="row bottom">
+            <article class="col-md-9 earnings">
+              <div class="title-box">
+                <p class="fw-bold">Earning Overview</p>
+              </div>
+              <div class="graph">
+                <div>
+                  <canvas id="myChart"></canvas>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2.2. 할일 목록 -->
+            <article class="col-md-3 tasks">
+              <div class="outline">
+                <div class="title-box">
+                  <p class="fw-bold">Tasks</p>
+                </div>
+
+                <ul>
+                  <li class="tasks-item">
+                    <p>Walk the Dog</p>
+                    <div class="badge">
+                      <span class="badge-inner"> 14 </span>
+                    </div>
+                  </li>
+                  <li class="tasks-item">
+                    <p>Study Hard</p>
+                    <div class="badge">
+                      <span class="badge-inner"> 4 </span>
+                    </div>
+                  </li>
+                  <li class="tasks-item">
+                    <p>Cooking dinner</p>
+                    <div class="badge">
+                      <span class="badge-inner"> 1 </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- 할일 목록 하단 공백 채우는 용도 div -->
+              <div class="empty"></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- 그래프 스크립트 -->
+    <script>
+      const ctx = document.getElementById('myChart');
+
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['January', 'Fabuary', 'March', 'April', 'May', 'June', 'July'],
+          datasets: [
+            {
+              label: 'Monthly',
+              data: [0, 10, 5, 2, 20, 30, 45],
+              borderWidth: 1,
+              backgroundColor: '#f0377e', // 그래프 테마 색상
+              // fill: 'origin',
+              // color: '#eee',
+              borderColor: '#f0377e',
+              fill: {
+                target: 'origin',
+                above: '#db00710f'
+              },
+              borderJoinStyle: 'round',
+              tension: 0.4
+            }
+          ]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
