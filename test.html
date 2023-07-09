@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var answer = '';
+      // var strArr = [];
+      // var subNum = 1;
+
+      // function solution(my_string) {
+      //   for (var i = 0; i < my_string.length; i++) {
+      //     console.log('차수', subNum);
+      //     strArr.push(my_string.charAt(my_string.length - subNum));
+      //     console.log(strArr);
+      //     subNum++;
+      //   }
+      //   answer = strArr.join('');
+      //   console.log('결과', answer);
+      //   return answer;
+      // }
+
+      //**********다른 풀이*******************
+      // function solution(my_string) {
+      //   // 한 글자 간격으로 쪼개고, 배열을 뒤집은 후, string으로 변환하기
+      //   var answer = '';
+      //   answer = my_string.split('').reverse().join('');
+      //   return answer;
+      // }
+
+      // var res = solution('rui');
+      // console.log(res);
+
+      //**********다른 풀이*******************
+
+      function solution(num1, num2) {
+        var rest = num1 % num2;
+
+        var answer = (num1 - rest) / num2;
+        return answer;
+      }
+
+      // var res = solution(10, 5);
+      var res = solution(7, 2);
+      console.log(res);
+    </script>
+  </body>
+</html>

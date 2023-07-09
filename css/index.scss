@@ -1,54 +1,90 @@
 @use '_reset.scss';
 
 // 변수 영역
-$main-color: rgb(228, 4, 4);
+$color-main: rgb(0, 178, 36);
+$color-main-pale: rgba(0, 178, 36, 0.087);
+$color-second: rgb(255, 217, 0);
+$color-grey: rgba(212, 212, 212, 0.15);
+$size-def: 8px;
 
-* {
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+#warp {
+  background-color: $color-grey;
 
-a {
-  // text-decoration: none !important;
-  color: black !important;
-}
+  * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+  }
+  a {
+    color: black;
+    font-weight: 600;
+    font-size: $size-def * 3;
+    text-decoration: none;
+  }
 
-body {
-  // background-color: black;
-}
-
-.container-fluid {
-  padding-top: 50px;
-  padding: 50px;
-  // background-color: rgb(229, 229, 229);
-  min-height: 100vh;
-}
-
-ul {
-  text-align: center;
-  // border: 1px solid rgb(195, 195, 195);
-  max-width: 600px;
-  li {
-    left: 0;
-
-    right: 0;
-    margin: auto;
-    // width: 90%;
-    padding: 10px;
-    background-color: white;
+  header {
+    background-color: $color-main;
+    padding: 10px 30px;
+    height: 60px;
     border-bottom: 1px solid grey;
+    border-bottom: 1px solid grey;
+    box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.1);
+  }
 
-    &:last-child {
-      border: none;
+  img {
+    width: 100%;
+    background-color: rgb(23, 23, 23);
+  }
+
+  .container {
+    padding-top: 50px;
+    padding: 50px;
+
+    min-height: 100vh;
+  }
+
+  .chip {
+    background-color: $color-main;
+    color: white;
+    margin: auto 5px;
+    padding: 5px 10px;
+    border-radius: 30px;
+    text-align: center;
+  }
+
+  .listbox-wrap {
+  }
+
+  .listbox-content {
+    // display: flex;
+    // flex-direction: column;
+  }
+
+  .ft__title--wrap {
+    // padding: 10px;
+    display: flex;
+
+    .ft__title--text {
+      z-index: 0;
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 20px;
+      // padding-bottom: 30px;
+      word-wrap: none;
+      transition: 1s all ease;
+    }
+
+    .ft__title--underline {
+      background-color: $color-second;
+      // transform: scaleX(0);
+
+      &:hover {
+        transform: scaleX(1);
+      }
+      // position: absolute;
+      // left: 0;
+      // bottom: 0;
+      // width: 100%;
+      // height: 50%;
     }
   }
-}
-
-header {
-  background-color: $main-color;
-  padding: 10px 30px;
-  height: 60px;
-  border-bottom: 1px solid grey;
-  border-bottom: 1px solid grey;
-  box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.1);
 }
